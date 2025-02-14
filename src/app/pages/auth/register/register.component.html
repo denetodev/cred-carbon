@@ -1,0 +1,95 @@
+<div class="register">
+  <header class="register__header">
+    <div class="register__logo">
+      <div class="register__logo-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div>
+      <h2 class="register__logo-text">CrediCarbon</h2>
+    </div>
+  </header>
+
+  <main class="register__content">
+    <div class="register__form-container">
+      <h2 class="register__title">Welcome to CrediCarbon</h2>
+      <p class="register__subtitle">
+        You're just a few steps away from earning carbon credits with
+        CrediCarbon. What best describes you?
+      </p>
+
+      <form
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit()"
+        class="register__form"
+      >
+        <div class="register__radio-group">
+          <label
+            class="register__radio-label"
+            [class.active]="
+              registerForm.get('userType')?.value === 'Individual'
+            "
+          >
+            <input type="radio" formControlName="userType" value="Individual" />
+            Individual
+          </label>
+          <label
+            class="register__radio-label"
+            [class.active]="registerForm.get('userType')?.value === 'Business'"
+          >
+            <input type="radio" formControlName="userType" value="Business" />
+            Business
+          </label>
+        </div>
+
+        <div class="register__input-group">
+          <label class="register__input-label">First name</label>
+          <input
+            type="text"
+            formControlName="firstName"
+            class="register__input"
+            placeholder="First name"
+          />
+        </div>
+
+        <div class="register__input-group">
+          <label class="register__input-label">Last name</label>
+          <input
+            type="text"
+            formControlName="lastName"
+            class="register__input"
+            placeholder="Last name"
+          />
+        </div>
+
+        <div class="register__input-group">
+          <label class="register__input-label">Email address</label>
+          <input
+            type="email"
+            formControlName="email"
+            class="register__input"
+            placeholder="Email address"
+          />
+        </div>
+
+        <div class="register__input-group">
+          <label class="register__input-label">Password</label>
+          <input
+            type="password"
+            formControlName="password"
+            class="register__input"
+            placeholder="Password"
+          />
+        </div>
+
+        <p class="register__hint">Use at least 8 characters.</p>
+        <p class="register__hint">It's okay if it's less than 8 characters.</p>
+
+        <button type="submit" class="register__button">Continue</button>
+      </form>
+    </div>
+  </main>
+</div>

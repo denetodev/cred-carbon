@@ -1,0 +1,84 @@
+<div class="login-page">
+  <header class="login-page__header">
+    <div class="login-page__logo">
+      <div class="login-page__logo-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div>
+      <h2 class="login-page__logo-text">CrediCarbon</h2>
+    </div>
+    <button class="button button--primary">Sign Up</button>
+  </header>
+
+  <main class="login-page__content">
+    <div class="login-page__form-container">
+      <h1 class="login-page__title">Welcome to CrediCarbon</h1>
+
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+        class="login-page__form"
+      >
+        <div class="form-field">
+          <label class="form-field__label">Email</label>
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Email"
+            class="form-field__input"
+          />
+        </div>
+
+        <div class="form-field">
+          <label class="form-field__label">Password</label>
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+            class="form-field__input"
+          />
+        </div>
+
+        <button type="submit" class="button button--primary button--full">
+          Sign In
+        </button>
+
+        <div class="login-page__divider">OR</div>
+
+        <button
+          type="button"
+          (click)="signInWithGoogle()"
+          class="button button--google button--full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M224,128a96,96,0,1,1-21.95-61.09,8,8,0,1,1-12.33,10.18A80,80,0,1,0,207.6,136H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128Z"
+            ></path>
+          </svg>
+          <span>Sign In with Google</span>
+        </button>
+
+        <div class="login-page__footer">
+          <p class="login-page__text">Don't have an account?</p>
+          <button
+            type="button"
+            (click)="navigateToRegister()"
+            class="button button--text button--full"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>

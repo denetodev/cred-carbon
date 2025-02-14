@@ -1,0 +1,79 @@
+<div class="calculator">
+  <!-- Header -->
+  <header class="calculator__header">
+    <div class="calculator__logo">
+      <div class="calculator__logo-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div>
+      <h2 class="calculator__logo-text">CrediCarbon</h2>
+    </div>
+    <div class="calculator__nav">
+      <a class="calculator__nav-link" routerLink="/dashboard">Dashboard</a>
+      <a class="calculator__nav-link" routerLink="/marketplace">Marketplace</a>
+      <a class="calculator__nav-link" routerLink="/calculator">Calculator</a>
+      <!-- <a class="calculator__nav-link" routerLink="/faq">FAQ</a> -->
+    </div>
+    <button class="calculator__button">Get Started</button>
+    <div
+      class="calculator__avatar"
+      [style.background-image]="'url(assets/images/avat.jpg)'"
+    ></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="calculator__content">
+    <!-- Calculator Header -->
+    <div class="calculator__content-header">
+      <h1 class="calculator__title">Emissions Calculator</h1>
+      <p class="calculator__subtitle">
+        Calculate your emissions in a few clicks
+      </p>
+    </div>
+
+    <!-- Emission Types -->
+    <div class="calculator__emission-types">
+      <button class="calculator__emission-button">Electricity</button>
+      <button class="calculator__emission-button">Natural Gas</button>
+      <button class="calculator__emission-button">Gasoline</button>
+      <button class="calculator__emission-button">Jet Fuel</button>
+    </div>
+
+    <!-- Quantity Input -->
+    <div class="calculator__quantity-input">
+      <label class="calculator__quantity-label">Quantity</label>
+      <input
+        type="text"
+        placeholder="e.g. 10,000 kWh"
+        class="calculator__quantity-field"
+      />
+    </div>
+
+    <!-- Add Another Emission -->
+    <button class="calculator__add-button">
+      Add another type of emissions
+    </button>
+
+    <!-- Data Source -->
+    <div class="calculator__data-source">
+      <h2 class="calculator__data-title">How did you get this data?</h2>
+      <div class="calculator__data-options">
+        <label class="calculator__data-option">
+          <input type="radio" name="data-source" checked />
+          <span>I know the exact amount of emissions</span>
+        </label>
+        <label class="calculator__data-option">
+          <input type="radio" name="data-source" />
+          <span>I know the quantity and type of energy used</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Calculate Button -->
+    <button class="calculator__calculate-button">Calculate</button>
+  </main>
+</div>

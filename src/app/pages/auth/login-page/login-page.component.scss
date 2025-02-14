@@ -1,0 +1,185 @@
+@use "sass:color";
+
+// Variables
+$color-primary: #14b866;
+$color-text: #111814;
+$color-border: #dce5e0;
+$color-secondary-text: #638875;
+$color-background: #f0f4f2;
+$color-white: #fff;
+
+// Mixins
+@mixin button-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+// Styles
+.login-page {
+  min-height: 100vh;
+  background-color: $color-white;
+  font-family: "Work Sans", "Noto Sans", sans-serif;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: $color-text;
+
+    &-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &-text {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+  }
+
+  &__content {
+    padding: 20px 160px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form-container {
+    width: 512px;
+    padding: 20px 0;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: $color-text;
+    padding: 20px 0 12px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__divider {
+    text-align: center;
+    color: $color-secondary-text;
+    font-size: 14px;
+    padding: 4px 0;
+  }
+
+  &__footer {
+    text-align: center;
+  }
+
+  &__text {
+    color: $color-secondary-text;
+    font-size: 14px;
+    padding: 4px 0;
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__label {
+    color: $color-text;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__input {
+    height: 56px;
+    padding: 15px;
+    border: 1px solid $color-border;
+    border-radius: 12px;
+    font-size: 16px;
+    color: $color-text;
+
+    &::placeholder {
+      color: $color-secondary-text;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+    }
+  }
+}
+
+.button {
+  @include button-base;
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-text;
+
+    &:hover {
+      background-color: color.adjust($color-primary, $lightness: -5%);
+    }
+  }
+
+  &--google {
+    background-color: $color-background;
+    color: $color-text;
+    gap: 8px;
+
+    &:hover {
+      background-color: color.adjust($color-background, $lightness: -5%);
+    }
+  }
+
+  &--text {
+    background-color: transparent;
+    color: $color-text;
+
+    &:hover {
+      background-color: $color-background;
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .login-page {
+    &__content {
+      padding: 20px;
+    }
+
+    &__form-container {
+      width: 100%;
+      max-width: 512px;
+    }
+
+    &__header {
+      padding: 12px 20px;
+    }
+  }
+}

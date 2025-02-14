@@ -1,0 +1,243 @@
+// project-details.component.scss
+@use "sass:color";
+
+// Variables
+$color-primary: #14b866;
+$color-text: #111814;
+$color-border: #dce5e0;
+$color-secondary-text: #638875;
+$color-background: #f0f4f2;
+$color-white: #fff;
+
+// Mixins
+@mixin button-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.project-detail {
+  min-height: 100vh;
+  background-color: $color-white;
+  font-family: "Work Sans", "Noto Sans", sans-serif;
+  color: $color-text;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    border-bottom: 1px solid $color-border;
+    background-color: $color-white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      color: $color-primary;
+    }
+
+    &-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: $color-text;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 32px;
+
+    &-link {
+      color: $color-text;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__button {
+    @include button-base;
+    background-color: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background-color: color.adjust($color-primary, $lightness: -5%);
+    }
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__hero {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  &__id {
+    color: $color-secondary-text;
+    margin-bottom: 24px;
+  }
+
+  &__section {
+    margin-bottom: 48px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+  }
+
+  &__info-item {
+    h3 {
+      font-size: 14px;
+      color: $color-secondary-text;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  &__gallery {
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  &__metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  &__metric {
+    text-align: center;
+
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: $color-primary;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: $color-secondary-text;
+    }
+  }
+
+  &__footer {
+    border-top: 1px solid $color-border;
+    padding: 24px 40px;
+
+    &-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    gap: 24px;
+
+    a {
+      color: $color-secondary-text;
+      text-decoration: none;
+      font-size: 14px;
+
+      &:hover {
+        color: $color-text;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $color-secondary-text;
+    font-size: 14px;
+  }
+
+  .project-detail__buy-button {
+    @include button-base;
+    background-color: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background-color: color.adjust($color-primary, $lightness: -5%);
+    }
+  }
+}

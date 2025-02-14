@@ -1,0 +1,123 @@
+<div class="marketplace">
+  <!-- Header -->
+  <header class="marketplace__header">
+    <div class="marketplace__logo">
+      <div class="marketplace__logo-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div>
+      <h2 class="marketplace__logo-text">CrediCarbon</h2>
+    </div>
+    <div class="marketplace__nav">
+      <a class="marketplace__nav-link" routerLink="/dashboard">Dashboard</a>
+      <a class="marketplace__nav-link" routerLink="/marketplace">Marketplace</a>
+      <a class="marketplace__nav-link" routerLink="/calculator">Calculator</a>
+      <!-- <a class="marketplace__nav-link" routerLink="/faq">FAQ</a> -->
+    </div>
+    <button class="marketplace__button">Get Started</button>
+    <div
+      class="marketplace__avatar"
+      [style.background-image]="'url(assets/images/avat.jpg)'"
+    ></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="marketplace__content">
+    <!-- Marketplace Header -->
+    <div class="marketplace__content-header">
+      <h1 class="marketplace__title">Marketplace</h1>
+      <button class="marketplace__view-button">View as list</button>
+    </div>
+
+    <!-- Filters -->
+    <div class="marketplace__filters">
+      <div class="marketplace__filter-group">
+        <button class="marketplace__filter-button">All</button>
+        <button class="marketplace__filter-button">Verified</button>
+        <button class="marketplace__filter-button">Gold standard</button>
+        <button class="marketplace__filter-button">Verra</button>
+        <button class="marketplace__filter-button">CCB</button>
+        <button class="marketplace__filter-button">Acr</button>
+        <button class="marketplace__filter-button">Other</button>
+      </div>
+      <div class="marketplace__filter-group">
+        <button class="marketplace__filter-button">All</button>
+        <button class="marketplace__filter-button">Africa</button>
+        <button class="marketplace__filter-button">Asia</button>
+        <button class="marketplace__filter-button">Australia</button>
+        <button class="marketplace__filter-button">Europe</button>
+        <button class="marketplace__filter-button">North America</button>
+        <button class="marketplace__filter-button">South America</button>
+      </div>
+    </div>
+
+    <!-- Price Range -->
+    <div class="marketplace__price-range">
+      <h3 class="marketplace__price-title">Price range</h3>
+      <div class="marketplace__range-container">
+        <span>Credits</span>
+        <input
+          type="range"
+          class="marketplace__range-input"
+          min="0"
+          max="1000"
+          value="500"
+          color="green"
+        />
+        <span>$0</span>
+        <span>$1,000</span>
+      </div>
+    </div>
+
+    <!-- Credit Cards -->
+    <div class="marketplace__credit-grid">
+      <div class="marketplace__credit-card" *ngFor="let credit of credits">
+        <img
+          [src]="credit.image"
+          alt="Carbon credit"
+          class="marketplace__credit-image"
+        />
+        <div class="marketplace__credit-details">
+          <h3 class="marketplace__credit-amount">{{ credit.amount }}</h3>
+          <p class="marketplace__credit-price">
+            {{ credit.pricePerTon }} per ton
+          </p>
+          <p class="marketplace__credit-total">{{ credit.totalPrice }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart -->
+    <div class="marketplace__cart">
+      <h3 class="marketplace__cart-title">Your cart</h3>
+      <div class="marketplace__cart-item">
+        <img
+          src="assets/images/marketplace/faz01.jpg"
+          alt="Credit preview"
+          class="marketplace__cart-image"
+        />
+        <div class="marketplace__cart-details">
+          <p class="marketplace__cart-name">1x Premium Credit</p>
+          <p class="marketplace__cart-description">10,000 tons of carbon</p>
+        </div>
+        <p class="marketplace__cart-price">$100</p>
+      </div>
+      <div class="marketplace__cart-actions">
+        <button
+          class="marketplace__cart-button marketplace__cart-button--clear"
+        >
+          Clear
+        </button>
+        <button
+          class="marketplace__cart-button marketplace__cart-button--checkout"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </main>
+</div>

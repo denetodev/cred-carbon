@@ -1,0 +1,83 @@
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-info .company {
+  color: var(--text-secondary);
+  margin: 8px 0;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  background-color: var(--primary-green);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.875rem;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 32px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat .value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-green);
+}
+
+.stat .label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.esg-metrics .metric {
+  margin-bottom: 24px;
+}
+
+.progress-bar {
+  background-color: var(--dark-surface);
+  height: 8px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.progress {
+  background-color: var(--primary-green);
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.score {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.status.completed {
+  background-color: var(--primary-green);
+  color: white;
+}
+
+.status.pending {
+  background-color: #f59e0b;
+  color: white;
+}
